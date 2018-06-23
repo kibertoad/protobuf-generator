@@ -1,0 +1,38 @@
+{
+  "name": "protobuf-generator",
+  "version": "1.0.0",
+  "description": "Validation utilities",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Igor Savin",
+      "email": "kibertoad@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kibertoad/protobuf-generator.git"
+  },
+  "keywords": [
+    "protobuf",
+    "generator",
+    "protocol",
+    "buffer"
+  ],
+  "homepage": "http://github.com/kibertoad/protobuf-generator",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "prettier": "prettier --write \"{lib,test}/**/*.{js,ts}\""
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.1",
+    "jest": "^23.1.0",
+    "prettier": "^1.13.5"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "extends": ["plugin:prettier/recommended"],
+  "env": {
+    "mocha": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  }
+}

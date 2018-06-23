@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package entity;
+
+service EntityCrud {
+    rpc CreateEntity(Entity) returns (Entity);
+}
+
+message Entity {
+    string code = 1;
+    string name = 2;
+    bool isActive = 3;
+    int64 createdAt = 4;
+}
