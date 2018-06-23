@@ -4,6 +4,10 @@ package entity;
 
 service EntityCrud {
     rpc CreateEntity(Entity) returns (Entity);
+    rpc GetEntity(Code) returns (Entity);
+    rpc GetAllEntities(Empty) returns (EntitiesResponse);
+    rpc UpdateEntity(Entity) returns (Entity);
+    rpc DeleteEntity(Code) returns (DeleteResponse);
 }
 
 message Entity {
@@ -11,4 +15,19 @@ message Entity {
     string name = 2;
     bool isActive = 3;
     int64 createdAt = 4;
+}
+
+message Code {
+    string code = 1;
+}
+
+message Empty {
+}
+
+message EntitiesResponse {
+    repeated Entity entities = 1;
+}
+
+message DeleteResponse {
+    int32 count = 1;
 }
