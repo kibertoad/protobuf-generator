@@ -1,59 +1,20 @@
 const entitySchema = require('../schemas/entity.schema');
-
-const EMPTY_PARAM = {
-  title: 'Empty'
-};
-
-const CODE_PARAM = {
-  title: 'Code',
-  type: 'object',
-  properties: {
-    code: {
-      type: 'string'
-    }
-  }
-};
-
-const CODES_PARAM = {
-  title: 'Codes',
-  type: 'object',
-  properties: {
-    codes: {
-      type: 'array',
-      items: {
-        type: 'string'
-      }
-    }
-  }
-};
-
-const DELETE_RESPONSE = {
-  title: 'DeleteResponse',
-  type: 'object',
-  properties: {
-    count: {
-      type: 'integer'
-    }
-  }
-};
+const { CODE_PARAM, CODES_PARAM, DELETE_RESPONSE, EMPTY_PARAM } = require('./crud.params');
 
 const blueprint = Object.freeze({
   package: 'entity',
   service: {
     name: 'EntityCrud',
-    methods: [
-      {
-        name: 'CreateEntity',
+    methods: {
+      CreateEntity: {
         parameters: entitySchema,
         returns: entitySchema
       },
-      {
-        name: 'GetEntity',
+      GetEntity: {
         parameters: CODE_PARAM,
         returns: entitySchema
       },
-      {
-        name: 'GetAllEntities',
+      GetAllEntities: {
         parameters: EMPTY_PARAM,
         returns: {
           title: 'EntitiesResponse',
@@ -66,22 +27,19 @@ const blueprint = Object.freeze({
           }
         }
       },
-      {
-        name: 'UpdateEntity',
+      UpdateEntity: {
         parameters: entitySchema,
         returns: entitySchema
       },
-      {
-        name: 'DeleteEntity',
+      DeleteEntity: {
         parameters: CODE_PARAM,
         returns: DELETE_RESPONSE
       },
-      {
-        name: 'DeleteEntities',
+      DeleteEntities: {
         parameters: CODES_PARAM,
         returns: DELETE_RESPONSE
       }
-    ]
+    }
   }
 });
 
