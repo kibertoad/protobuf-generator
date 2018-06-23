@@ -1,3 +1,5 @@
+const Status = require('./status.enum');
+
 const entitySchema = {
   title: 'Entity',
   type: 'object',
@@ -12,6 +14,10 @@ const entitySchema = {
       description: 'Is entity currently active?',
       default: true,
       type: 'boolean'
+    },
+    status: {
+      type: 'string',
+      enum: Object.values(Status)
     },
     createdAt: {
       type: 'string',

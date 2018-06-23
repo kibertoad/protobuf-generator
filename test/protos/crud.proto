@@ -15,7 +15,13 @@ message Entity {
     string code = 1;
     string name = 2;
     bool isActive = 3;
-    int64 createdAt = 4;
+    enum Status {
+        CREATED = 0;
+        IN_PROGRESS = 1;
+        COMPLETED = 2;
+    }
+    Status status = 4;
+    int64 createdAt = 5;
 }
 
 message Code {
