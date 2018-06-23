@@ -1,7 +1,7 @@
 {
   "name": "protobuf-generator",
   "version": "1.0.0",
-  "description": "Validation utilities",
+  "description": "Protobuf generator",
   "license": "MIT",
   "maintainers": [
     {
