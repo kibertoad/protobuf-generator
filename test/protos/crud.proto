@@ -8,6 +8,7 @@ service EntityCrud {
     rpc GetAllEntities(Empty) returns (EntitiesResponse);
     rpc UpdateEntity(Entity) returns (Entity);
     rpc DeleteEntity(Code) returns (DeleteResponse);
+    rpc DeleteEntities(Codes) returns (DeleteResponse);
 }
 
 message Entity {
@@ -30,4 +31,8 @@ message EntitiesResponse {
 
 message DeleteResponse {
     int32 count = 1;
+}
+
+message Codes {
+    repeated string codes = 1;
 }
