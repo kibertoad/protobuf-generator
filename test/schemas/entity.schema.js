@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const Status = require('./status.enum');
 
 const entitySchema = {
@@ -17,7 +18,7 @@ const entitySchema = {
     },
     status: {
       type: 'string',
-      enum: Object.values(Status)
+      enum: _.values(Status)
     },
     createdAt: {
       type: 'string',

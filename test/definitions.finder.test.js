@@ -1,4 +1,4 @@
-const parser = require('../lib/definitions.parser');
+const parser = require('../lib/definitions.finder');
 const entitySchema = require('./schemas/entity.schema');
 
 describe('definitions.parser', () => {
