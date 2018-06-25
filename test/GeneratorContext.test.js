@@ -8,18 +8,17 @@ describe('GeneratorContext', () => {
       const context = new GeneratorContext();
 
       expect(() => {
-        context.addDefinition({
-          ...entitySchema,
-          title: undefined
-        });
+        context.addDefinition(
+          Object.assign({}, entitySchema, {
+            title: undefined
+          })
+        );
       }).toThrow(/Please add title attribute to this definition/);
     });
 
     it('requires definitions to be non-contradicting', () => {
       const context = new GeneratorContext();
-      context.addDefinition({
-        ...entitySchema
-      });
+      context.addDefinition(_.cloneDeep(entitySchema));
 
       const contradictingSchema = _.cloneDeep(entitySchema);
       contradictingSchema.properties.code.type = 'integer';
